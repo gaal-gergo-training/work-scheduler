@@ -53,7 +53,7 @@ public class SpringDataConfig {
         Properties properties = new Properties();
         properties.setProperty(AvailableSettings.SHOW_SQL, "true");
         properties.setProperty(AvailableSettings.FORMAT_SQL, "true");
-        properties.setProperty(AvailableSettings.HBM2DLL_CREATE_SCHEMAS, "create-drop");
+        properties.setProperty(AvailableSettings.HBM2DDL_AUTO, "create-drop");
         properties.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
         return properties;
     }
