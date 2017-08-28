@@ -25,7 +25,7 @@ public class SpringDataConfig {
 
     @Bean
     public DataSource createDataSource() {
-        HikariConfig config = new HikariConfig("/config/datasource-dev.properties");
+        HikariConfig config = new HikariConfig("/database/datasource-dev.properties");
         return new HikariDataSource(config);
     }
 
@@ -53,6 +53,7 @@ public class SpringDataConfig {
         Properties properties = new Properties();
         properties.setProperty(AvailableSettings.SHOW_SQL, "true");
         properties.setProperty(AvailableSettings.FORMAT_SQL, "true");
+        properties.setProperty(AvailableSettings.HBM2DDL_IMPORT_FILES, "/database/import.sql");
         properties.setProperty(AvailableSettings.HBM2DDL_AUTO, "create-drop");
         properties.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
         return properties;
