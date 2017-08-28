@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.gaalgergo</groupId>
+    <artifactId>work-scheduler</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Work Scheduler - Parent</name>
+    <description>Web application for managing work schedules and shifts.</description>
+    <inceptionYear>2017</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>gergogaal</id>
+            <name>Gergo Gaal</name>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>attilagyongyosi</id>
+            <name>Attila Gyongyosi</name>
+            <email>attilagyongyosi0@gmail.com</email>
+            <roles>
+                <role>trainer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>work-scheduler-data</module>
+        <module>work-scheduler-service</module>
+        <module>work-scheduler-web</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <dir.codequality>${project.basedir}/code-quality</dir.codequality>
+        <test.coverage.threshold>60</test.coverage.threshold>
+
+        <version.java>1.8</version.java>
+
+        <version.lombok>1.16.18</version.lombok>
+        <version.dozer>5.5.1</version.dozer>
+        <version.slf4j>1.7.25</version.slf4j>
+        <version.logback>1.2.3</version.logback>
+
+        <version.spring>4.3.10.RELEASE</version.spring>
+
+        <version.plugin.compiler>3.6.2</version.plugin.compiler>
+        <version.plugin.versions>2.4</version.plugin.versions>
+
+        <version.plugin.surefire>2.20</version.plugin.surefire>
+        <version.plugin.cobertura>2.7</version.plugin.cobertura>
+
+        <version.plugin.checkstyle>2.17</version.plugin.checkstyle>
+        <version.plugin.findbugs>3.0.5</version.plugin.findbugs>
+        <version.plugin.pmd>3.8</version.plugin.pmd>
+
+        <version.plugin.javadoc>2.10.4</version.plugin.javadoc>
+        <version.plugin.jxr>2.5</version.plugin.jxr>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${version.lombok}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>${version.dozer}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${version.logback}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${version.plugin.compiler}</version>
+                    <configuration>
+                        <source>${version.java}</source>
+                        <target>${version.java}</target>
+                        <compilerVersion>${version.java}</compilerVersion>
+                        <compilerArgument>-Xlint:all</compilerArgument>
+                        <compilerArgument>-Xlint:-processing</compilerArgument>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${version.plugin.versions}</version>
+                </plugin>
+
+                <!-- Testing Plugins -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${version.plugin.surefire}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>${version.plugin.cobertura}</version>
+                </plugin>
+                <!-- /Testing Plugins -->
+
+                <!-- Code Quality Plugins -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${version.plugin.checkstyle}</version>
+                    <configuration>
+                        <configLocation>code-quality/checkstyle/checks.xml</configLocation>
+                        <suppressionsLocation>${dir.codequality}/checkstyle/suppressions.xml</suppressionsLocation>
+                        <violationSeverity>warning</violationSeverity>
+                        <failOnViolation>true</failOnViolation>
+                        <failsOnError>false</failsOnError>
+                        <linkXRef>false</linkXRef>
+                        <consoleOutput>false</consoleOutput>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${version.plugin.findbugs}</version>
+                    <configuration>
+                        <xmlOutput>true</xmlOutput>
+                        <effort>Max</effort>
+                        <threshold>Medium</threshold>
+                        <excludeFilterFile>${dir.codequality}/findbugs/findbugs-exclude.xml</excludeFilterFile>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${version.plugin.pmd}</version>
+                    <configuration>
+                        <failOnViolation>true</failOnViolation>
+                        <linkXRef>false</linkXRef>
+                        <rulesets>
+                            <ruleset>${dir.codequality}/pmd/basic.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/braces.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/codesize.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/design.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/empty.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/javabeans.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/strings.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/typeresolution.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/unnecessary.xml</ruleset>
+                            <ruleset>${dir.codequality}/pmd/unusedcode.xml</ruleset>
+                        </rulesets>
+                    </configuration>
+                </plugin>
+                <!-- /Code Quality Plugins -->
+
+                <!-- Reporting -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>${version.plugin.jxr}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${version.plugin.javadoc}</version>
+                </plugin>
+                <!-- /Reporting -->
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>code-check</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>checkstyle-code-verification</id>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>checkstyle</goal>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-pmd-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>pmd-code-verification</id>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>pmd</goal>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>findbugs-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>findbugs-code-verification</id>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>findbugs</goal>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>cobertura-maven-plugin</artifactId>
+                            <configuration>
+                                <check>
+                                    <branchRate>${test.coverage.threshold}</branchRate>
+                                    <lineRate>${test.coverage.threshold}</lineRate>
+                                    <haltOnFailure>false</haltOnFailure>
+                                    <totalBranchRate>${test.coverage.threshold}</totalBranchRate>
+                                    <totalLineRate>${test.coverage.threshold}</totalLineRate>
+                                </check>
+                                <quiet>true</quiet>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>cobertura-coverage-check</id>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>clean</goal>
+                                        <goal>cobertura</goal>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <build.profile>prod</build.profile>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>skipChecks</id>
+        </profile>
+    </profiles>
+</project>
