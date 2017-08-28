@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <dir.codequality>${project.parent.basedir}/code-quality</dir.codequality>
 
-        <version.mysql>6.0.6</version.mysql>
+        <version.mysql>5.1.40</version.mysql>
         <version.hikaricp>2.6.3</version.hikaricp>
         <version.hibernate>5.2.10.Final</version.hibernate>
         <version.springjpa>1.11.6.RELEASE</version.springjpa>
