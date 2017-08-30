@@ -17,6 +17,8 @@
             <ul>
                 <c:forEach items="${employees}" var="employee">
                     <li>${employee.name}</li>
+                    <li>${employee.email}</li>
+                    <li>${employee.birthday}</li>
                 </c:forEach>
             </ul>
         </main>

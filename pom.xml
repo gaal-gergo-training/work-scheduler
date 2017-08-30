@@ -51,6 +51,7 @@
         <version.dozer>5.5.1</version.dozer>
         <version.slf4j>1.7.25</version.slf4j>
         <version.logback>1.2.3</version.logback>
+        <version.craftsman>1.0.3</version.craftsman>
 
         <version.spring>4.3.10.RELEASE</version.spring>
 
@@ -99,6 +100,12 @@
                 <artifactId>spring-context</artifactId>
                 <version>${version.spring}</version>
             </dependency>
+            <dependency>
+                <groupId>io.craftsman</groupId>
+                <artifactId>dozer-jdk8-support</artifactId>
+                <version>${version.craftsman}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
