@@ -8,6 +8,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.DefaultConversionService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
@@ -18,7 +19,13 @@ public class SpringServiceConfig {
 
     @Bean
     public DozerBeanMapper dozerBeanMapper() {
-        return new DozerBeanMapper();
+        List<String> mappingFiles = new ArrayList();
+        mappingFiles.add("dozerJdk8Converters.xml");
+
+        DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
+        dozerBeanMapper.setMappingFiles(mappingFiles);
+
+        return dozerBeanMapper;
     }
 
     @Bean
