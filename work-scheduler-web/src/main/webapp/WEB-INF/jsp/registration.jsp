@@ -15,8 +15,8 @@
             <label for="personal-name">Employee name:</label>
             <input type="text" name="name" id="personal-name"/>
 
-            <label for="personal-date">Personal date:</label>
-            <input type="date" name="date" id="personal-date"/>
+            <label for="birth-date">Birth date:</label>
+            <input type="date" name="date" id="birth-date"/>
 
             <label for="personal-id">Personal ID:</label>
             <input type="text" name="ID" id="personal-id">
