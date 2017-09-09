@@ -2,7 +2,6 @@ package com.github.gaalgergo.workscheduler.service.employees;
 
 import com.github.gaalgergo.workscheduler.data.entities.EmployeeEntity;
 import com.github.gaalgergo.workscheduler.data.repositories.EmployeeRepository;
-import com.github.gaalgergo.workscheduler.service.converters.EmployeeConverter;
 import com.github.gaalgergo.workscheduler.service.domain.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
