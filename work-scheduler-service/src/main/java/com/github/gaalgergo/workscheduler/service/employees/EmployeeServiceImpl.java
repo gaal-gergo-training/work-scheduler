@@ -1,5 +1,6 @@
 package com.github.gaalgergo.workscheduler.service.employees;
 
+import com.github.gaalgergo.workscheduler.data.entities.EmployeeEntity;
 import com.github.gaalgergo.workscheduler.data.repositories.EmployeeRepository;
 import com.github.gaalgergo.workscheduler.service.domain.Employee;
 import lombok.extern.slf4j.Slf4j;
@@ -28,4 +29,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             .map(entity -> conversionService.convert(entity, Employee.class))
             .collect(Collectors.toList());
     }
+
+    @Override
+    public void save(final Employee employee) {
+       employeeRepository.save(conversionService.convert(employee, EmployeeEntity.class));
+    }
+
 }
