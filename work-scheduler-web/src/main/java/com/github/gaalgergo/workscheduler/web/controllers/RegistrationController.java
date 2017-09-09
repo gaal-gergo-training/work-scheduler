@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RegistrationController {
 
     @GetMapping("/pages/registration")
-    public String registration(){
+    public String registration() {
         return "registration";
     }
     @PostMapping("registration")
-    public void registrationSubmit(){
+    public void registrationSubmit() {
         System.out.println("done");
     }
 }
