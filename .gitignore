@@ -1,6 +1,15 @@
+# IDEA Specific
 .idea/
 *.iml
+
+# Maven Generated
 target/
 bin/
+
+# Logs
 *.log
 logs/
+
+# Maven Versions Plugin
+*.xml.releaseBackup
+release.properties
