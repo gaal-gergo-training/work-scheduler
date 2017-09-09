@@ -1,5 +1,6 @@
 package com.github.gaalgergo.workscheduler.service.employees;
 
+import com.github.gaalgergo.workscheduler.data.entities.EmployeeEntity;
 import com.github.gaalgergo.workscheduler.data.repositories.EmployeeRepository;
 import com.github.gaalgergo.workscheduler.service.converters.EmployeeConverter;
 import com.github.gaalgergo.workscheduler.service.domain.Employee;
@@ -21,9 +22,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private ConversionService conversionService;
 
-    @Autowired
-    private EmployeeConverter employeeConverter;
-
     @Override
     public Collection<Employee> getAll() {
         log.debug("Retrieving every employee data from database...");
@@ -35,7 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void save(final Employee employee) {
-       employeeRepository.save(employeeConverter.convert(employee));
+       employeeRepository.save(conversionService.convert(employee, EmployeeEntity.class));
     }
 
 }
