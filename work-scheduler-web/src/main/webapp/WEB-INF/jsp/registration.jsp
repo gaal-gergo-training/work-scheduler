@@ -22,7 +22,7 @@
 
                 <div>
                     <form:label path="birthday">Birthday: </form:label>
-                    <form:input required="required" path="birthday" type="localdate"/>
+                    <form:input required="required" path="birthday" type="date"/>
                 </div>
 
                 <div>
