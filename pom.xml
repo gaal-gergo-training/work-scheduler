@@ -48,10 +48,12 @@
         <version.java>1.8</version.java>
 
         <version.lombok>1.16.18</version.lombok>
+        <version.jstl>1.2</version.jstl>
         <version.dozer>5.5.1</version.dozer>
         <version.slf4j>1.7.25</version.slf4j>
         <version.logback>1.2.3</version.logback>
         <version.dozerjdk8>1.0.3</version.dozerjdk8>
+        <version.hibernate-validator>5.3.5.Final</version.hibernate-validator>
 
         <version.spring>4.3.10.RELEASE</version.spring>
 
@@ -77,6 +79,16 @@
                 <artifactId>lombok</artifactId>
                 <version>${version.lombok}</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${version.jstl}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${version.hibernate-validator}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.dozer</groupId>
