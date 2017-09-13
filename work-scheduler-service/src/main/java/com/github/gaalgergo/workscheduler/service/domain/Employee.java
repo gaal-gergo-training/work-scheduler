@@ -17,6 +17,8 @@ public class Employee {
     private Long id;
     private String name;
     private String email;
+    private String username;
+    private String password;
     private LocalDate birthday;
     private String personalID;
     private int medicalCare;
