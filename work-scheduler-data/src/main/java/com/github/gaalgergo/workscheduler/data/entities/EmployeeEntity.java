@@ -17,6 +17,8 @@ public class EmployeeEntity extends BaseEntity {
 
     private String name;
     private String email;
+    private String username;
+    private String password;
     private LocalDate birthday;
     private String personalID;
     private int medicalCare;
