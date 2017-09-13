@@ -15,6 +15,13 @@
     <description>Web application for managing work schedules and shifts.</description>
     <inceptionYear>2017</inceptionYear>
 
+    <scm>
+        <developerConnection>scm:git:git@github.com:gaal-gergo-training/work-scheduler.git</developerConnection>
+        <connection>scm:git:git@github.com:gaal-gergo-training/work-scheduler.git</connection>
+        <url>git@github.com:gaal-gergo-training/work-scheduler.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <developers>
         <developer>
             <id>gergogaal</id>
