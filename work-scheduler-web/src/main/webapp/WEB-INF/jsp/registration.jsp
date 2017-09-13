@@ -29,6 +29,14 @@
                     <form:label path="email">Mail: </form:label>
                     <form:input required="required" path="email"/>
                 </div>
+                <div>
+                    <form:label path="personalID">Personal ID: </form:label>
+                    <form:input required="required" path="personalID"/>
+                </div>
+                <div>
+                    <form:label path="medicalCare">Medical care: </form:label>
+                    <form:input required="required" path="medicalCare"/>
+                </div>
 
                 <form:button>Submit</form:button>
 
