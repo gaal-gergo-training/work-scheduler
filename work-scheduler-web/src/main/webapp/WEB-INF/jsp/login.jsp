@@ -11,8 +11,13 @@
 <html>
     <head>
         <title>Login</title>
+        <link href="${pageContext.request.contextPath}/resources/css/header.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"/>
     </head>
     <body>
+        <header>
+            <p id="header-title"><b>WORK</b> SCHEDULER</p>
+        </header>
         <form:form modelAttribute="userLogin" action="${pageContext.request.contextPath}/login">
             <div>
                 <form:label path="username">Username: </form:label>
