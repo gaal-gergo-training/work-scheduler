@@ -1,0 +1,16 @@
+package com.github.gaalgergo.workscheduler.data.entities;
+
+import lombok.Data;
+
+import javax.persistence.Entity;
+import java.time.LocalDate;
+
+@Entity
+@Data
+public class VacationRequestEntity {
+
+    private EmployeeEntity employeeEntity;
+    private LocalDate vacationStart;
+    private LocalDate vacationEnd;
+
+}
