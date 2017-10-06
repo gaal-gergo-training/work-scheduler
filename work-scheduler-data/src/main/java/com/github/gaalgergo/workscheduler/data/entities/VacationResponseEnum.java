@@ -3,9 +3,8 @@ package com.github.gaalgergo.workscheduler.data.entities;
 import javax.persistence.Entity;
 
 @Entity
-public enum VacationRequestEnum {
-    ILL,
-    HOLIDAY,
-    NO_PAID_LEAVE,
-    OTHER
+public enum VacationResponseEnum {
+    ACCEPTED,
+    IN_PROGRESS,
+    REJECTED
 }

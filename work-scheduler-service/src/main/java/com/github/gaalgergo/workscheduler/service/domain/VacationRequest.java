@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Data
 public class VacationRequest {
 
-    private EmployeeEntity employeeEntity;
+    private Employee employee;
     private LocalDate vacationStart;
     private LocalDate vacationEnd;
 

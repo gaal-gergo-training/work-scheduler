@@ -7,9 +7,8 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-public class VacationRequestEntity {
+public class VacationRequestEntity extends BaseEntity{
 
-    private EmployeeEntity employeeEntity;
     private LocalDate vacationStart;
     private LocalDate vacationEnd;
 
