@@ -15,9 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"/>
     </head>
     <body>
-        <header>
-            <p id="header-title"><b>WORK</b> SCHEDULER</p>
-        </header>
+        <%@include file="../html/header.html"%>
         <main>
             <form:form modelAttribute="employee" action="${pageContext.request.contextPath}/registration">
                 <div>

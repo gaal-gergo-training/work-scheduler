@@ -12,24 +12,27 @@
     <head>
         <title>Login</title>
         <link href="${pageContext.request.contextPath}/resources/css/header.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/resources/css/buttons.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/resources/css/login.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"/>
     </head>
     <body>
-        <header>
-            <p id="header-title"><b>WORK</b> SCHEDULER</p>
-        </header>
-        <form:form modelAttribute="userLogin" action="${pageContext.request.contextPath}/login">
-            <div>
-                <form:label path="username">Username: </form:label>
-                <form:input required="required" path="username"/>
-            </div>
+        <%@include file="../html/header.html"%>
 
-            <div>
-                <form:label path="password">Password: </form:label>
-                <form:input required="required" path="password" type="password"/>
-            </div>
+        <div id="form-container">
+            <form:form modelAttribute="userLogin" action="${pageContext.request.contextPath}/login">
+                <div>
+                    <form:label path="username">Username: </form:label>
+                    <form:input required="required" path="username"/>
+                </div>
 
-            <form:button>Login</form:button>
-        </form:form>
+                <div>
+                    <form:label path="password">Password: </form:label>
+                    <form:input required="required" path="password" type="password"/>
+                </div>
+
+                <form:button>Login</form:button>
+            </form:form>
+        </div>
     </body>
 </html>
