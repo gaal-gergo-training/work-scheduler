@@ -1,9 +1,6 @@
 package com.github.gaalgergo.workscheduler.data.entities;
 
-import javax.persistence.Entity;
-
-@Entity
-public enum VacationResponseEnum {
+public enum VacationStatus {
     ACCEPTED,
     IN_PROGRESS,
     REJECTED

@@ -5,8 +5,10 @@ import lombok.EqualsAndHashCode;
 
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.Collection;
 
 
 @Data
@@ -23,4 +25,6 @@ public class EmployeeEntity extends BaseEntity {
     private String personalID;
     private int medicalCare;
     private int enabled;
+    @OneToMany
+    private Collection<VacationRequestEntity> vacationRequests;
 }

@@ -1,6 +1,7 @@
 package com.github.gaalgergo.workscheduler.service.domain;
 
-import com.github.gaalgergo.workscheduler.data.entities.EmployeeEntity;
+import com.github.gaalgergo.workscheduler.data.entities.VacationStatus;
+import com.github.gaalgergo.workscheduler.data.entities.VacationType;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -9,6 +10,8 @@ import java.time.LocalDate;
 public class VacationRequest {
 
     private Employee employee;
+    private VacationType type;
+    private VacationStatus status;
     private LocalDate vacationStart;
     private LocalDate vacationEnd;
 

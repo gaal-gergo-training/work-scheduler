@@ -1,9 +1,6 @@
 package com.github.gaalgergo.workscheduler.data.entities;
 
-import javax.persistence.Entity;
-
-@Entity
-public enum VacationRequestEnum {
+public enum VacationType {
     ILL,
     HOLIDAY,
     NO_PAID_LEAVE,
